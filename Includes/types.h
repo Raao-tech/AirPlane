@@ -15,16 +15,19 @@ typedef long Level;
 typedef long Id;
 #define NO_ID -1
 
-typedef enum Status {
+#define NO_POS -1.00
+#define NO_DIS -1.00
+
+typedef enum{
     OK,
     ERROR
-};
+}Status;
 
 
-
-
-
-
+typedef enum{
+    FALSE,
+    TRUE
+}Bool;
 
 
 /* ========== Position ==========*/
@@ -33,44 +36,16 @@ typedef struct _Position {
     float y;
 }Position;
 
-#define NO_POS -1.00
-#define NO_DIS -1.00
+
 
 /*Create a new position data*/
-Position position_new (float x, float y)
-{
-    Position pos_new;
-    pos_new.x = x;
-    pos_new.y = y;
-    return pos_new;
-}
+Position position_new (float x, float y);
 
 /*Validate if a position is permite*/
-bool position_is_valid (Position pos)
-{
-    if (pos.x <= NO_POS || pos.y <= NO_POS) return false;
-    return true;
-}
+Bool position_is_valid (Position pos);
 
 /*Calculate distance betwen pos a and pos b*/
-float position_distance (Position pos_a, Position pos_b)
-{
-    float distance;
-    float dis_x;
-    float dis_y;
-
-    if (position_is_valid(pos_a) == false || 
-        position_is_valid(pos_b) == false ) return NO_DIS;
-    
-    distance = NO_DIS;
-
-    dis_x = pos_a.x - pos_b.x;
-    dis_y = pos_a.y - pos_b.y;
-
-    distance = pow ( (dis_x*dis_x) + (dis_y*dis_y) ,0.5);
-
-    return distance;
-}
+float position_distance (Position pos_a, Position pos_b);
 
 
 #endif
