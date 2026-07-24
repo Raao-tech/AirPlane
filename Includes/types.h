@@ -8,6 +8,7 @@
 #ifndef TYPES_H
 #define TYPES_H
 
+#define MAX_WORD 1024
 
 typedef long Level;
 #define NO_LEVEL -1;

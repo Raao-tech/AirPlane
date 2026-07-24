@@ -23,6 +23,7 @@ Status   city_rem_pop (City * city);
 
 Position city_get_position (City * city);
 
+int      city_get_population (City * city);
 
 
 
