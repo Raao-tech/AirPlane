@@ -43,9 +43,9 @@ float menu_main (void)
 
     option = -1;
     printf ("=================================\n");
-    printf ("====\t\t          \t\t====\n");
-    printf ("====\t\tTYCOON AIR\t\t====\n");
-    printf ("====\t\t          \t\t====\n");
+    printf ("====\t          \t\t====\n");
+    printf ("====\tTYCOON AIR\t\t====\n");
+    printf ("====\t          \t\t====\n");
     printf ("=================================\n");
 
     sleep (2);
@@ -60,7 +60,14 @@ float menu_main (void)
 
         scanf ("%d", &option);
 
-        if (option < FAC || option > DIF) option = -1;
+        if (option < FAC || option > DIF)
+        {
+            printf ("Please, you must type a integer between number 1 and 3\n\n");
+            option = -1;
+            sleep (1);
+        }
+        while (getchar() != '\n'); 
+        
     }
 
     return (float) option;

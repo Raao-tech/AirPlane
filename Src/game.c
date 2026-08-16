@@ -95,7 +95,7 @@ Status game_next_day    (Game* game)
 
 	if(!game || game->day < 0) return ERROR;
 
-
+	return OK;
 
 }
 
